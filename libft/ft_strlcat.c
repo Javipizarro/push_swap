@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpizarro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 21:28:31 by jpizarro          #+#    #+#             */
-/*   Updated: 2020/02/03 23:30:46 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/05/23 21:52:36 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **	'dstsize' (in practice this should not happen as it means that either
 **	'dstsize' is incorrect or that 'dst' is not a proper string).
 **  Note that room for the nul should be included in dstsize.
-**  If the 'src' and 'dst' strings overlap, the behavior is undefined.
+**  If the 'src' and 'dst' strings overlap, the behargvior is undefined.
 */
 
 #include "libft.h"
