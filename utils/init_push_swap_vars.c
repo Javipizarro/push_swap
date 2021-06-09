@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gen_link_for_stack.c                               :+:      :+:    :+:   */
+/*   push_swap_var_init.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 10:49:03 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/05/24 11:13:33 by jpizarro         ###   ########.fr       */
+/*   Created: 2021/05/23 19:18:10 by jpizarro          #+#    #+#             */
+/*   Updated: 2021/05/23 22:41:35 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**	Generates a link t_list_link from the args_list to be stored in a stack.
+**	All the push_swap structure's variables that need it,
+**	are initiated to NULL or to 0.
 */
 
 #include "../push_swap.h"
 
-void	gen_link_for_stack(t_list_head *stack, int arg)
+void	init_push_swap_vars(t_push_swap *ps)
 {
-	t_list_link	*link;
-
-	link = malloc(sizeof(t_list_link));
-	link->elem = arg;
-	link->prev = stack->last;
-	link->next = NULL;
-	stack->last->next = link;
-	stack->last = link;
-	if (!stack->first)
-		stack->first = stack->last;
-	else if (!stack->second)
-		stack->second = stack->last;
+	ps->err = 0;
+	ps->args_num = 0;
+	ps->args_list = NULL;
+	ps->stack_a = NULL;
+	ps->stack_b = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 00:53:22 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/05/23 19:57:46 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/09 12:00:37 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void		*ft_calloc(size_t count, size_t size);
 int			ft_charindex(char const *s, char c);
 void		*ft_charlloc(size_t len, char c);
 int			ft_charpos(char const *s, char c);
+int			ft_fitinint(char *str);
+void		ft_free_split(char **split);
 int			ft_isalpha(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
@@ -34,7 +36,6 @@ int			ft_isspace(int c);
 int			ft_isupper(int c);
 char		*ft_itoa(int n);
 char		*ft_itoa_base(int n, char *base);
-int			ft_fitinint(char *str);
 char		*ft_litoa_base(long int n, char *base);
 void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);

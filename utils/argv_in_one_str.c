@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 21:22:45 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/04 11:53:56 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/09 11:37:44 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*argv_in_one_str(int argc, char **argv)
 	while (++i < argc)
 	{
 		buff = ft_strjoin(str, " ");
+		free (str);
 		str = ft_strjoin(buff, argv[i]);
 		free (buff);
 		buff = NULL;

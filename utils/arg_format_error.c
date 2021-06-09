@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:54:49 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/05/23 19:34:00 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/04 19:14:24 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	arg_format_error(char *arg)
 	int i;
 
 	i = 0;
-	while (i)
-		if (!ft_isdigit(arg[i] || (i == 0 && (arg[i] == '-' || arg[i] == '+'))))
-			return (2);
-		else
+	while (arg[i])
+		if (ft_isdigit(arg[i]) || (i == 0 && (arg[i] == '-' || arg[i] == '+')))
 			i++;
+		else
+			return (2);
 	return(0);
 }

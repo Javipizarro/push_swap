@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 19:42:47 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/04 09:15:27 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/04 19:18:00 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_fitinint(char *str)
 {
 	long int	num;
 	num = ft_atoli(str);
-	return (num == (long int)(int)num);
+	return (num == (long int)(int)num && ft_strnlen(str, 12) < 12);
 }

@@ -6,7 +6,7 @@
 #    By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/23 12:42:28 by jpizarro          #+#    #+#              #
-#    Updated: 2021/05/24 11:02:40 by jpizarro         ###   ########.fr        #
+#    Updated: 2021/06/04 18:43:59 by jpizarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,13 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(STATICS)
 	echo "Creating $@"
-	$(CC) $(CFLAGS) $(OBJS) $(STATICS) -o $@
+	#$(CC) $(CFLAGS) $(OBJS) $(STATICS) -o $@
+	$(CC) -g $(CFLAGS) $(OBJS) $(STATICS) -o $@
 	echo "$@ is ready!"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	#$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) -g $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(STATICS):
 	cd libft/ && $(MAKE)

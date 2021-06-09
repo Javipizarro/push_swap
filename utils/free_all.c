@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:15:32 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/05/23 22:21:45 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/09 11:23:52 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,10 @@ void	free_all(t_push_swap *ps)
 {
 	if (ps->args_list)
 		free (ps->args_list);
-	push_swap_var_init(ps);
+	free_stack(ps->stack_a);
+	free_stack(ps->stack_b);
+	init_push_swap_vars(ps);
+////////////////////////
+	system("leaks push_swap");
+	///////////////////////////
 }

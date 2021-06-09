@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_var_init.c                               :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 19:18:10 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/05/23 22:41:35 by jpizarro         ###   ########.fr       */
+/*   Created: 2021/06/09 11:49:51 by jpizarro          #+#    #+#             */
+/*   Updated: 2021/06/09 11:59:32 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-**	All the push_swap structure's variables that need it,
-**	are initiated to NULL or to 0.
+**	Undoes what split does
 */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	push_swap_var_init(t_push_swap *ps)
+void	ft_free_split(char **split)
 {
-	ps->err = 0;
-	ps->args_num = 0;
-	ps->args_list = NULL;
-	ps->stack_a = NULL;
-	ps->stack_b = NULL;
+	int	i;
+	
+	i = 0;
+	while (split[i])
+	{
+		free (split[i]);
+		split[i] = NULL;
+		i++;
+	}
+	free(split);
+	split = NULL;
 }
