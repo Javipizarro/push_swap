@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 11:44:48 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/09 12:01:42 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/09 12:39:59 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@
 
 #include "../push_swap.h"
 
-int	gen_args_list(t_push_swap *ps, int argc, char **argv)
+void	gen_args_list(t_push_swap *ps, int argc, char **argv)
 {
 	unsigned int	i;
 	char			**buff;
-
 
 	buff = resplit_argv_by_spc(argc, argv);
 	recount_args(ps, buff);
@@ -34,12 +33,8 @@ int	gen_args_list(t_push_swap *ps, int argc, char **argv)
 		ps->args_list[i] = atoi(buff[i]);
 		ps->err += check_duplicate_arg(ps, i);
 		if (ps->err)
-		{
-			write(2, "error\n", 6);
-			return (2);
-		}
+			break;
 		i++;
 	}
 	ft_free_split(buff);
-	return (0);
 }

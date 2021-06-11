@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 10:05:25 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/09 11:30:46 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:00:14 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ int	main(int argc, char **argv)
 //	///////////////////
 
 
-	init_push_swap_vars(&ps);
+	init_all_vars(&ps);
 	gen_args_list(&ps, argc, argv);
 	if (ps.err)
 	{
+		write(2, "error\n", 6);
 		free_all(&ps);
 		return (0);
 	}

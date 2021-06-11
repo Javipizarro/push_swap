@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_push_swap_vars.c                              :+:      :+:    :+:   */
+/*   init_instruc_vars.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 19:18:10 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/09 19:47:08 by jpizarro         ###   ########.fr       */
+/*   Created: 2021/06/09 19:47:50 by jpizarro          #+#    #+#             */
+/*   Updated: 2021/06/09 19:55:10 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**	All the push_swap structure's variables that need it,
-**	are initiated.
-*/
-
 #include "../push_swap.h"
 
-void	init_push_swap_vars(t_push_swap *ps)
+void	init_instruc_vars(t_instructions *instruc)
 {
-	ps->err = 0;
-	ps->args_num = 0;
-	ps->args_list = NULL;
-	ps->stack_a = NULL;
-	ps->stack_b = NULL;
+	instruc->list = NULL;
+	instruc->list_size = 128;
+	instruc->num = 0;
 }

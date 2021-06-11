@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_push_swap_vars.c                              :+:      :+:    :+:   */
+/*   fresh_instruc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/23 19:18:10 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/09 19:47:08 by jpizarro         ###   ########.fr       */
+/*   Created: 2021/06/09 20:08:59 by jpizarro          #+#    #+#             */
+/*   Updated: 2021/06/09 20:19:40 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-**	All the push_swap structure's variables that need it,
-**	are initiated.
-*/
-
 #include "../push_swap.h"
 
-void	init_push_swap_vars(t_push_swap *ps)
+void	fresh_instruc(t_instructions *instruc)
 {
-	ps->err = 0;
-	ps->args_num = 0;
-	ps->args_list = NULL;
-	ps->stack_a = NULL;
-	ps->stack_b = NULL;
+	instruc->list = calloc(sizeof(char), instruc->list_size);
+	instruc->num = 0;
 }
