@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 19:53:21 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/11 20:47:26 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/22 06:45:29 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@
 
 #include "../push_swap.h"
 
-t_list_link	*cut_link(t_list_link *link)
+t_list_link	*cut_link(t_list_link **link)
 {
 	t_list_link	*cut_link;
 
-	cut_link = link;
-	if (link == link->down)
-		link = NULL;
+	cut_link = *link;
+	if (*link == (*link)->down)
+		*link = NULL;
 	else
 	{
-		link->down->up = link->up;
-		link->up->down = link->down;
+		(*link)->down->up = (*link)->up;
+		(*link)->up->down = (*link)->down;
+		*link = (*link)->down;
 	}
 	cut_link->up = cut_link;
 	cut_link->down = cut_link;

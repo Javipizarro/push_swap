@@ -6,7 +6,7 @@
 /*   By: jpizarro <jpizarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 20:27:18 by jpizarro          #+#    #+#             */
-/*   Updated: 2021/06/11 20:56:18 by jpizarro         ###   ########.fr       */
+/*   Updated: 2021/06/22 06:31:36 by jpizarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 #include "../push_swap.h"
 
-void	paste_link(t_list_link *list, t_list_link *link)
+void	paste_link(t_list_link **list, t_list_link **link)
 {
-	if (list)
+	if (*list)
 	{
-		link->down = list;
-		link->up = list->up;
-		link->down->up = link;
-		link->up->down = link;
+		(*link)->down = *list;
+		(*link)->up = (*list)->up;
+		(*link)->down->up = *link;
+		(*link)->up->down = *link;
 	}
-	list = link;
+	*list = *link;
 }
